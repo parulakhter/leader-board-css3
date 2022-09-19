@@ -2,77 +2,133 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&family=Poppins:wght@400;500;700&family=Yeseva+One&display=swap');
 
 /* Common Styles */
-body{
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
     font-family: 'Poppins', sans-serif;
     background-color: #F3F1FF;
 }
-main{
+
+/* Nav bar */
+.header-bg {
+    background-color: #562EFF;
+}
+
+.nav-container {
+    width: 870px;
+    height: 94px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+}
+
+ul {
+    display: flex;
+    align-items: center;
+}
+
+.logo img,
+.menu-item img {
+    width: 50px;
+}
+
+.nav-container ul li {
+    list-style: none;
+}
+
+.nav-container ul li a {
+    text-decoration: none;
+    color: #F3F1FF;
+    font-size: 16px;
+    margin-right: 20px;
+}
+
+/* Main Area */
+main {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.container{
+
+.container {
     background-color: #FFFFFF;
     width: 870px;
     padding: 30px;
     margin-top: 21px;
     border-radius: 5px;
 }
-.top-players{
+
+.top-players {
     margin-bottom: 30px;
 }
-hr{
+
+hr {
     border: 1px solid #D1D1D1;
     margin-bottom: 27px;
 }
+
 /* Top Players styles */
-.section-title{
+.section-title {
     color: #562EFF;
     font-size: 24px;
-    margin-top: 3px;
+    margin: 3px 0 40px 0;
 }
-.players{
+
+.players {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-row-gap: 30px;
 }
-.player{
+
+.player {
     display: flex;
     align-items: center;
 }
-.player img{
+
+.player img {
     width: 56px;
 }
-.player-name{
+
+.player-name {
     margin-left: 16px;
     font-size: 18px;
 }
- /* Top Blog Styles */
- .blogs{
-     display: grid;
-     grid-template-columns: repeat(2, 1fr);
-     grid-row-gap: 26px;
- }
 
- .blog{
-     display: flex;
- }
+/* Top Blog Styles */
+.blogs {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-row-gap: 26px;
+}
 
-.blog .thumbnail img{
+.blog {
+    display: flex;
+}
+
+.blog .thumbnail img {
     width: 177px;
     height: 117px;
-} 
-.blog-info{
+}
+
+.blog-info {
     margin-left: 16px;
 }
-.blog-title{
+
+.blog-title {
     font-size: 20px;
 }
-.blog-author{
+
+.blog-author {
     color: #9F9F9F;
     font-size: 16px;
 }
-.blog-author a{
+
+.blog-author a {
     text-decoration: none;
     font-size: 16px;
     color: #562EFF;
@@ -81,26 +137,41 @@ hr{
 /* --------------------
     Course Style
 ----------------------- */
-.courses{
+.courses {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-column-gap: 24px;
 }
-.courses .course-banner img{
+
+.courses .course-banner img {
     width: 224px;
     height: 104px;
 }
-.course-info{
+
+.course-info {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
-.fa-star.filled{
+
+.fa-star.filled {
     color: gold;
 }
-.fa-star.empty{
+
+.fa-star.empty {
     color: lightgray;
 }
+
+.fa-clock {
+    color: #EB5757;
+}
+
+.course-duration {
+    background-color: #FFE4E8;
+    border-radius: 15px;
+    padding: 5px 10px;
+}
+
 /* ---------------------
     Media Queries
 ------------------------ */
@@ -108,25 +179,32 @@ hr{
 /* Mobile Devices */
 
 @media only screen and (max-width: 668px) {
-    .container{
+    .container {
         width: 100%;
+        justify-content: center;
     }
-    .players, .blogs{
+
+    .players,
+    .blogs {
         grid-template-columns: repeat(1, 1fr);
+
     }
-    .player, .blog{
+
+    .player,
+    .blog {
         flex-direction: column;
     }
 
 }
-@media only screen and (min-width: 668px) and (max-width: 991px) {
-    .container{
+
+@media only screen and (min-width: 669px) and (max-width: 991px) {
+    .container {
         width: 100%;
     }
-    .players{
+
+    .players,
+    .courses,
+    .blogs {
         grid-template-columns: repeat(2, 1fr);
-    }
-    .courses{
-        grid-template-columns: repeat(1, 1fr);
     }
 }
